@@ -12,7 +12,7 @@
 
         <label>Order by: </label>
         <select class="form-control" ng-model="orderField" ng-options="label for label in orderFields" class="input-medium"></select>
-        <select class="form-control" ng-model="orderReverse"class="input-medium">
+        <select class="form-control" ng-model="orderReverse" class="input-medium">
             <option value="true">Descending</option>
             <option value="false">Ascending</option>
         </select>
@@ -39,13 +39,23 @@
                         <h3>{{value.title}}</h3>
                         <p>{{value.overview}}</p>
                         <hr>
-                        <button class="btn btn-primary" ng-click="target = value.tmdb_id">Watch trailer</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="{{'.'+ value.imdb_id}}" ng-click="showTrailer(value);target = value.imdb_id">Watch trailer</button>
+                        <!--  <button class="btn btn-primary" ng-click="showStats(value)">Statistics</button> 
                         <button class="btn btn-info" ng-show="target" ng-click="target = false">Hide trailer</button>
-                        <div ng-hide="target"></div>
-                        <div ng-show="target">
-                            There will be trailer
-                            <!--<iframe width="560" height="315" src="{{value.trailerUrl }}" frameborder="0" allowfullscreen></iframe>-->
+                        -->
+
+                        <div class="modal fade {{value.imdb_id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <br>
+                                    <span class="glyphicon glyphicon-remove" data-dismiss="modal"></span>
+                                     <div class="modal-body" id="{{value.imdb_id}}">
+                                        <!-- Generated elements will be here -->
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
 					</div>
 
                     <div class="col-md-4">

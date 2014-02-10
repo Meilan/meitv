@@ -2,7 +2,7 @@
 body {
    background-color: #000000;
    background: url(../img/up.jpg);
-   background-size: 100%;
+   background-size: cover;
    background-attachment: fixed;
    background-repeat: no-repeat;
 }
@@ -146,4 +146,7 @@ nav ul li a{
     background: #112222;
     text-align: center;
     color: #e6e6e6;
+}
+.modal-content {
+    text-align: center;
 }
