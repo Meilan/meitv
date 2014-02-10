@@ -65,12 +65,13 @@ meilanTVControllers.controller('mainController', ['$scope', '$http',
 		$scope.orderReverse = false;
 
 
-		$scope.apiUrl = 'http://api.trakt.tv/movies/trending.json/' + $scope.apiKey + '?&callback=JSON_CALLBACK';
+		//$scope.apiUrl = 'http://api.trakt.tv/movies/trending.json/' + $scope.apiKey + '?&callback=JSON_CALLBACK';
+		$scope.apiUrl = 'http://meitv.dev/data/data.json?callback=JSON_CALLBACK';
 
 		$scope.init = function() {
-			$http.jsonp($scope.apiUrl).success(function(data){
+			//user "jsonp" instead of get when it is cross domain fetching
+			$http.get($scope.apiUrl).success(function(data){
 				angular.forEach(data, function(value, index) {
-
 					//Conver normal youtube video url into embed url
 					var trailerUrl = value.trailer;
 					trailerUrl = trailerUrl.replace('watch?v=', 'embed/');
@@ -90,7 +91,9 @@ meilanTVControllers.controller('mainController', ['$scope', '$http',
 					$scope.results.push(value);
 
 				});
-			}).error(function(error){ });
+			}).error(function(error){
+				console.log('error' + error);
+			});
 		};
 
 		$scope.numberOfPages = function() {
