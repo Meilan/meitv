@@ -133,12 +133,35 @@ nav ul li a{
 .pagination {
     text-align: right;
 }
-
 .dvd {
     cursor: pointer;
 }
-.dvd li:hover {
-    background: pink;
+.dvds li {
+    background: #fefefe;
+}
+.dvds li:hover {
+    background: #6688AA;
+    color: white;
+}
+.dvds li span {
+    float: right;
+}
+.dvds li.active:before {
+    content: "\2713";
+}
+.dvds li.active {
+    background-color: #6688AA;
+    color: white;
+}
+
+div.total{
+    border-top:1px solid rgba(255,255,255,0.5);
+    border-bottom:1px solid rgba(255,255,255,0.5);
+    padding:15px 30px;
+    font-size:20px;
+    font-weight:bold;
+    text-align: left;
+    color:#fff;
 }
 
 .footer {
