@@ -9,6 +9,11 @@ var generateUrl = function(pre, tail) {
 
 meilanTVControllers.controller('ShopCtrl', ['$scope', '$routeParams',
   function($scope, $routeParams) {
+
+	$scope.init = function() {
+		$('nav li').removeClass('active');
+        $('li.shop').addClass('active');
+	}
 	
 	$scope.dvds = [
 		{
@@ -48,7 +53,10 @@ meilanTVControllers.controller('ShopCtrl', ['$scope', '$routeParams',
 meilanTVControllers.controller('AboutCtrl', ['$scope', '$routeParams',
   function($scope, $routeParams) {
     $scope.about = $routeParams;
-    console.log("This is about page");
+   $scope.init = function() {
+    	$('nav li').removeClass('active');
+        $('li.about').addClass('active');
+    };
 }]);
 
 meilanTVControllers.controller('mainController', ['$scope', '$http',
@@ -79,6 +87,9 @@ meilanTVControllers.controller('mainController', ['$scope', '$http',
 		$scope.statsUrl = 'http://api.trakt.tv/movie/stats.json/'+ $scope.apiKey;
 
 		$scope.init = function() {
+
+			$('nav li').removeClass('active');
+        	$('li.movies').addClass('active');
 			//user "jsonp" instead of get when it is cross domain fetching
 			$http.get($scope.apiUrl).success(function(data){
 				angular.forEach(data, function(value, index) {
