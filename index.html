@@ -2,12 +2,13 @@
 <!--
     In order for our application to bootstrap with our newly created module we'll also need to specify the module name as the value of the ngApp directive:
 -->
-<html lang="en" ng-app="MeilanTV">
+<html lang="en">
 <head>
 	<title>TV Show Premieres</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
 	<link rel="stylesheet" href="css/main.css">
+    <script data-main="js/main.js" src="js/lib/requirejs/require.js"></script>
 </head>
 <body>
     <div class='banner'>
@@ -35,21 +36,11 @@
        This is my amazing footer
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- INCLUDE REQUIRED THIRD PARTY LIBRARY JAVASCRIPT AND CSS -->
-    <script src="http://code.angularjs.org/1.2.11/angular.min.js"></script>
-    <script src="http://code.angularjs.org/1.2.11/angular-animate.min.js"></script>
-    <script src="http://code.angularjs.org/1.2.11/angular-route.js"></script>
-    <!-- INCLUDE APPLICATION SPECIFIC CSS AND JAVASCRIPT -->
-    <script src="js/tv-premieres-app/routers/app.js"></script>
-    <script src="js/tv-premieres-app/filters/filter.js"></script>
-    <script src="js/tv-premieres-app/controllers/mainController.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
+ 
     <script>
         $(function () {
-            $('nav li').click(function() {
-                $('nav li').removeClass('active');
-                $(this).addClass('active');
-            });
+          
         });
     </script>
 </body>

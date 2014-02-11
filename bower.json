@@ -1,14 +1,14 @@
 {
-    "name": "AngularJS + RequireJS APP",
-   "version": "0.1",
-    "main": "index.html",
-    "ignore": [
-     "**/.*",
-     "js/lib"
-    ],
-   "dependencies": {
-    "angular": "latest",
-     "requirejs": "latest",
-     "requirejs-domready": "latest"
-  }
- }
+    "name": "angularAMD",
+    "version": "0.1.0",
+    "dependencies": {
+        "angular": "~1.2.11",
+        "angular-route": "~1.2.11",
+        "angular-ui-bootstrap-bower": "~0.6.0",
+        "requirejs": "~2.1.9",
+        "requirejs-plugins": "~1.0.2"
+    },
+    "devDependencies": {
+        "angular-scenario": "~1.2.1"
+    }
+}
