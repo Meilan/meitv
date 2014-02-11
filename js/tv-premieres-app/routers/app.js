@@ -1,6 +1,7 @@
 var app = angular.module('MeilanTV',[
 	'ngRoute',
-	'meilanTVControllers'
+	'controllers',
+	'filters'
 ]);
 // configure html5 to get links working on jsfiddle
 //$locationProvider.html5Mode(true);
@@ -10,7 +11,7 @@ app.config(['$routeProvider',
 		$routeProvider.
 			when('/movies', {
 				templateUrl: 'page/movies.html',
-				controller: 'mainController'
+				controller: 'MovieCtrl'
 			}).
 			when('/shop', {
 				templateUrl: 'page/shop.html',

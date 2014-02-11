@@ -1,0 +1,14 @@
+{
+    "name": "AngularJS + RequireJS APP",
+   "version": "0.1",
+    "main": "index.html",
+    "ignore": [
+     "**/.*",
+     "js/lib"
+    ],
+   "dependencies": {
+    "angular": "latest",
+     "requirejs": "latest",
+     "requirejs-domready": "latest"
+  }
+ }

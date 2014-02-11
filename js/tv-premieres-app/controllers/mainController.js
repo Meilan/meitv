@@ -1,4 +1,4 @@
-var meilanTVControllers = angular.module('meilanTVControllers', []);
+var appControllers = angular.module('controllers', []);
 
 
 // Function for generating valid url
@@ -7,13 +7,13 @@ var generateUrl = function(pre, tail) {
 	return convertedUrl;
 };
 
-meilanTVControllers.controller('ShopCtrl', ['$scope', '$routeParams',
+appControllers.controller('ShopCtrl', ['$scope', '$routeParams',
   function($scope, $routeParams) {
 
 	$scope.init = function() {
 		$('nav li').removeClass('active');
         $('li.shop').addClass('active');
-	}
+	};
 	
 	$scope.dvds = [
 		{
@@ -50,16 +50,16 @@ meilanTVControllers.controller('ShopCtrl', ['$scope', '$routeParams',
 	};
 }]);
 
-meilanTVControllers.controller('AboutCtrl', ['$scope', '$routeParams',
+appControllers.controller('AboutCtrl', ['$scope', '$routeParams',
   function($scope, $routeParams) {
     $scope.about = $routeParams;
    $scope.init = function() {
-    	$('nav li').removeClass('active');
+		$('nav li').removeClass('active');
         $('li.about').addClass('active');
     };
 }]);
 
-meilanTVControllers.controller('mainController', ['$scope', '$http',
+appControllers.controller('MovieCtrl', ['$scope', '$http',
 	function($scope, $http) {
 
 		$scope.apiKey = "1c60bfaa49ab8a58b42043418a9cc049";
@@ -89,7 +89,7 @@ meilanTVControllers.controller('mainController', ['$scope', '$http',
 		$scope.init = function() {
 
 			$('nav li').removeClass('active');
-        	$('li.movies').addClass('active');
+			$('li.movies').addClass('active');
 			//user "jsonp" instead of get when it is cross domain fetching
 			$http.get($scope.apiUrl).success(function(data){
 				angular.forEach(data, function(value, index) {
@@ -154,36 +154,3 @@ meilanTVControllers.controller('mainController', ['$scope', '$http',
 			});
 		};
 }]);
-
-//Pagination start point
-app.filter('startFrom', function() {
-
-	//"input" Source array or string to be limited. In this app, all the movies.
-    return function(input, start) {
-
-		//Set body ontop after reset page
-
-        start = +start; //parse to int
-        return input.slice(start);
-
-    };
-});
-
-app.filter('isGenre', function() {
-    return function(input, genre) {
-        if (typeof genre === 'undefined' || genre === null) {
-            return input;
-        } else {
-            var out = [];
-            for (var a = 0; a < input.length; a++){
-                for (var b = 0; b < input[a].genres.length; b++){
-                    if(input[a].genres[b] == genre) {
-                        out.push(input[a]);
-                    }
-                }
-            }
-            var numberOfPages = Math.ceil(out.length/10);
-            return out;
-        }
-    };
-});
