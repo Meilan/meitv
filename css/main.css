@@ -175,6 +175,9 @@ div.total span{
     text-align: center;
     color: #e6e6e6;
 }
+.footer a {
+    color: #e6e6e6;
+}
 .modal-content {
     text-align: center;
 }

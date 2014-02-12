@@ -4,49 +4,22 @@
 	<title>TV Show Premieres</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script data-main="js/main.js" src="js/lib/requirejs/require.js"></script>
 </head>
 <body>
-    <div class='banner'>
-        <div class='container'>
-            <div class="row">
-                <div class="col-xs-6">
-                    <h1>Capgemini TV/Movie</h1>
-                </div>
-                <div class="col-xs-6">
-                    <nav>
-                        <ul class="nav nav-pills pull-right">
-                            <li class="movies"><a href="#movies"><span class="glyphicon glyphicon-home"></span> HOME</a></li>
-                            <li class="shop"><a href="#shop"><span class="glyphicon glyphicon-shopping-cart"></span> SHOP</a></li>
-                            <li class="about"><a href="#about"><span class="glyphicon glyphicon-info-sign"></span> ABOUT</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class='banner' ng-include src="'views/header.html'"></div>
 
-    <div ng-view>
-    </div>
+    <div ng-view></div>
 
-    <div class="container-fluid footer">
-        <h3>Useful links</h3>
-        <div class="row">
-            <div class="col-md-12">
-              <a href="http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript">Code organization |</a>
-              <a href="https://github.com/marcoslin/angularAMD">AngularAMD |</a>
-              <a href="http://tutorialzine.com/2013/08/learn-angularjs-5-examples/">AngularJS tutorial |</a>
-              <a href="http://code.tutsplus.com/tutorials/building-a-web-app-from-scratch-in-angularjs--net-32944">Inspration of this project</a>
-          </div>
-        </div>
-    </div>
+    <div class="container-fluid footer" ng-include src="'views/footer.html'"></div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="js/lib/bootstrap.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script>
         $(function () {
             // some javascript if you want
         });
     </script>
+
 </body>
 </html>
