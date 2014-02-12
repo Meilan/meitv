@@ -1,6 +1,5 @@
 define(['angularAMD', 'angular-route'], function (angularAMD) {
     var app = angular.module("webapp", ['ngRoute']);
-    
     /**
      * Configure Angular ngApp with route and cache the needed providers
      */
