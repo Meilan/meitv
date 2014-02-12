@@ -13,7 +13,6 @@ require.config({
         'MovieController': 'app/controllers/movie_ctrl',
         'ShopController': 'app/controllers/shop_ctrl',
         'AboutController': 'app/controllers/about_ctrl',
-        'HomeController': 'app/controllers/home_ctrl',
 
         'ShopService': 'app/services/shop_service',
         'MovieService': 'app/services/movie_service'
