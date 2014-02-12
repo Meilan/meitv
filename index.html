@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<!--
-    In order for our application to bootstrap with our newly created module we'll also need to specify the module name as the value of the ngApp directive:
--->
 <html lang="en">
 <head>
 	<title>TV Show Premieres</title>
@@ -14,32 +11,34 @@
         <div class='container'>
             <div class="row">
                 <div class="col-xs-6">
-                    <h1>Meilan TV/Movie</h1>
+                    <h1>Capgemini TV/Movie</h1>
                 </div>
                 <div class="col-xs-6">
                     <nav>
-                    <ul class="nav nav-pills pull-right">
-                        <li class="movies"><a href="#movies"><span class="glyphicon glyphicon-home"></span> HOME</a></li>
-                        <li class="shop"><a href="#shop"><span class="glyphicon glyphicon-shopping-cart"></span> SHOP</a></li>
-                        <li class="about"><a href="#about"><span class="glyphicon glyphicon-info-sign"></span> ABOUT</a></li>
-                    </ul>
-                </nav>
+                        <ul class="nav nav-pills pull-right">
+                            <li class="movies"><a href="#movies"><span class="glyphicon glyphicon-home"></span> HOME</a></li>
+                            <li class="shop"><a href="#shop"><span class="glyphicon glyphicon-shopping-cart"></span> SHOP</a></li>
+                            <li class="about"><a href="#about"><span class="glyphicon glyphicon-info-sign"></span> ABOUT</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
     </div>
+
     <div ng-view>
     </div>
 
     <div class="container-fluid footer">
        This is my amazing footer
     </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="js/lib/bootstrap.min.js"></script>
  
     <script>
         $(function () {
-          
+            // some javascript if you want
         });
     </script>
 </body>

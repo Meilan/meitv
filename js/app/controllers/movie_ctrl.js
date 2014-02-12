@@ -1,10 +1,7 @@
-
-
-define(['app'], function (app) {
-    app.register.controller('MovieController', ['$scope', '$http', function ($scope, $http) {
+define(['app', 'MovieService'], function (app) {
+    app.register.controller('MovieController', ['$scope', 'Movies', '$http', function ($scope, Movies, $http) {
         
         console.log('this is from movie controller');
-		$scope.apiKey = "1c60bfaa49ab8a58b42043418a9cc049";
 		//$scope.searchQuery = "good";
 		$scope.filterText = null;
 		$scope.results = [];
@@ -22,20 +19,16 @@ define(['app'], function (app) {
 
 		$scope.embedTrailer = null;
 
-
-
-		//$scope.apiUrl = 'http://api.trakt.tv/movies/trending.json/' + $scope.apiKey + '?&callback=JSON_CALLBACK';
-		$scope.apiUrl = 'http://meitv.dev/data/data.json?callback=JSON_CALLBACK';
-		$scope.statsUrl = 'http://api.trakt.tv/movie/stats.json/'+ $scope.apiKey;
+		var data = Movies;
 
 		$scope.init = function() {
 
 			$('nav li').removeClass('active');
 			$('li.movies').addClass('active');
-			//user "jsonp" instead of get when it is cross domain fetching
-			$http.get($scope.apiUrl).success(function(data){
-				angular.forEach(data, function(value, index) {
-					
+
+			Movies.query().then(function (result) {
+                angular.forEach(result, function(value, index) {
+					// Make a genre array to able to display in the genre dropdown box
 					angular.forEach(value.genres, function(genre, index) {
 						var exists = false;
 						angular.forEach($scope.availableGenres, function(avGerne, index) {
@@ -48,11 +41,8 @@ define(['app'], function (app) {
 						}
 					});
 					$scope.results.push(value);
-
 				});
-			}).error(function(error){
-				console.log('error' + error);
-			});
+            });
 		};
 
 		$scope.numberOfPages = function() {
@@ -75,15 +65,6 @@ define(['app'], function (app) {
 			}
 		};
 
-		$scope.showStats = function(movie) {
-			var movieUrl = generateUrl(movie.title, movie.year);
-			var statsUrl = $scope.statsUrl + '/' + movieUrl + '?&callback=JSON_CALLBACK';
-
-			$http.jsonp(statsUrl).success(function(data){
-				//console.log(data);
-			});
-		};
-
 		$scope.showTrailer = function(movie) {
 			//Conver normal youtube video url into embed url
 			var trailerUrl = movie.trailer.replace('watch?v=', 'embed/');
@@ -95,11 +76,8 @@ define(['app'], function (app) {
 				keyboard: true
 			});
 		};
+
     }]);
-
-
-
-
 
 	//Pagination start point
 	app.register.filter('startFrom', function() {

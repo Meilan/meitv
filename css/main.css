@@ -178,3 +178,7 @@ div.total span{
 .modal-content {
     text-align: center;
 }
+
+.main-frame {
+    min-height: 670px;
+}
