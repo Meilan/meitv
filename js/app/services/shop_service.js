@@ -2,7 +2,7 @@
 // define(['app','angular-resource'], function (app) {
 define(['app'], function (app) {
     // app.register.factory('Pictures', ['$http', '$q', '$log', '$resource', function ($http, $q, $log, $resource) {
-    app.register.factory('dvdItems', ['$http', '$q', '$log', function ($http, $q, $log) {
+    app.register.service('dvdItems', ['$http', '$q', '$log', function ($http, $q, $log) {
 
         var dvds = [
             {

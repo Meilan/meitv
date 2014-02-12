@@ -1,8 +1,7 @@
 define(['app', 'MovieService'], function (app) {
     app.register.controller('MovieController', ['$scope', 'Movies', '$http', function ($scope, Movies, $http) {
-        
-        console.log('this is from movie controller');
-		//$scope.searchQuery = "good";
+
+		//Values that can be used in template
 		$scope.filterText = null;
 		$scope.results = [];
 
@@ -18,8 +17,6 @@ define(['app', 'MovieService'], function (app) {
 		$scope.orderReverse = false;
 
 		$scope.embedTrailer = null;
-
-		var data = Movies;
 
 		$scope.init = function() {
 

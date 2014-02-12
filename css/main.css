@@ -185,3 +185,12 @@ div.total span{
 .main-frame {
     min-height: 670px;
 }
+.example-repeat-enter-setup,
+.example-repeat-leave-setup,
+.example-repeat-move-setup {
+  -webkit-transition:all linear 0.5s;
+  -moz-transition:all linear 0.5s;
+  -ms-transition:all linear 0.5s;
+  -o-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}

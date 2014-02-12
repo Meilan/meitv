@@ -3,9 +3,9 @@
 	<div class="search-box row-fluid form-inline">
         <label>Search: </label>
         <!-- ng-model="fiterText associate with $scope.filterText in Controller -->
-        <input type="text" class="form-control" ng-model="filterText" placeholder="Write whatever you want...">
+        <input type="text" class="form-control" ng-model="filterText" placeholder="Search...">
 
-       <label>Genre: </label>
+        <label>Genre: </label>
         <select class="form-control" ng-model="genreFilter" ng-options="label for label in availableGenres">
             <option value="">All</option>
         </select>
@@ -23,7 +23,11 @@
         <ul class="list-group">
 
             <!-- "filter", "limitTo" are built-in filter functionalities of AngularJS -->
-        	<li class="list-group-item" ng-repeat="value in results | filter: filterText | isGenre:genreFilter | startFrom: currentPage*itemsPerPage | limitTo: itemsPerPage | orderBy:customOrder:orderReverse ">
+        	<li ng-animate="'animate'" 
+            ng-animate="{enter: 'example-repeat-enter',
+                      leave: 'example-repeat-leave',
+                      move: 'example-repeat-move'}" 
+                      class="list-group-item" ng-repeat="value in results | filter: filterText | isGenre:genreFilter | startFrom: currentPage*itemsPerPage | limitTo: itemsPerPage | orderBy:customOrder:orderReverse ">
         		<div class="row">
 
         			<div class="col-md-2">
