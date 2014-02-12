@@ -71,10 +71,6 @@ define(['app', 'MovieService'], function (app) {
 			$scope.embedTrailer = trailerUrl;
 			var newElement = angular.element("<iframe width='560' height='315' src="+$scope.embedTrailer+" frameborder='0' allowfullscreen></iframe><hr>");
 			$('#'+ movie.imdb_id).html(newElement);
-
-			$('#'+ movie.imdb_id).modal({
-				keyboard: true
-			});
 		};
 
     }]);
@@ -84,14 +80,14 @@ define(['app', 'MovieService'], function (app) {
 
 		//"input" Source array or string to be limited. In this app, all the movies.
 		return function(input, start) {
-
 		start = +start; //parse to int
 		return input.slice(start);
-
 		};
+
 	});
 
 	app.register.filter('isGenre', function() {
+		
 		return function(input, genre) {
 			if (typeof genre === 'undefined' || genre === null) {
 				return input;

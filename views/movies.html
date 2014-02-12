@@ -25,6 +25,7 @@
             <!-- "filter", "limitTo" are built-in filter functionalities of AngularJS -->
         	<li class="list-group-item" ng-repeat="value in results | filter: filterText | isGenre:genreFilter | startFrom: currentPage*itemsPerPage | limitTo: itemsPerPage | orderBy:customOrder:orderReverse ">
         		<div class="row">
+
         			<div class="col-md-2">
         			    <img src="{{value.images.poster}}" class="img-responsive" />
         				<div class="ratings">
@@ -39,11 +40,10 @@
                         <h3>{{value.title}}</h3>
                         <p>{{value.overview}}</p>
                         <hr>
-                        <button class="btn btn-primary" data-toggle="modal" data-target="{{'.'+ value.imdb_id}}" ng-click="showTrailer(value);target = value.imdb_id">Watch trailer</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target=".{{value.imdb_id}}" ng-click="showTrailer(value);target = value.imdb_id">Watch trailer</button>
                         <!--  <button class="btn btn-primary" ng-click="showStats(value)">Statistics</button> 
                         <button class="btn btn-info" ng-show="target" ng-click="target = false">Hide trailer</button>
                         -->
-
                         <div class="modal fade {{value.imdb_id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -55,7 +55,6 @@
                                 </div>
                             </div>
                         </div>
-
 					</div>
 
                     <div class="col-md-4">
@@ -71,8 +70,9 @@
 
         		</div>
         	</li>
+ 
         </ul>
-    </div>
+    </div><!-- end of result-container -->
     <hr>
     <!-- hide pagination button when result is filtered by search form -->
     <div class="row" ng-hide="filterText || genreFilter ">
