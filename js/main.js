@@ -1,6 +1,6 @@
 require.config({
 
-    baseUrl: "../js",
+    baseUrl: "js",
     
 	// alias libraries paths
     paths: {
@@ -8,6 +8,7 @@ require.config({
         'angular-route': 'lib/angular/angular-route',
         'async': 'lib/requirejs/async',
         'angularAMD': 'lib/requirejs/angularAMD',
+        'angular-animate': 'lib/angular/angular-animate.min',
         'ngload': 'lib/requirejs/ngload',
 
         'MovieController': 'app/controllers/movie_ctrl',
@@ -21,7 +22,8 @@ require.config({
     // Add angular modules that does not support AMD out of the box, put it in a shim
     shim: {
         'angularAMD': ['angular'],
-        'angular-route': ['angular']
+        'angular-route': ['angular'],
+        'angular-animate': ['angular']
     },
 
     // kick start application

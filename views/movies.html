@@ -23,11 +23,7 @@
         <ul class="list-group">
 
             <!-- "filter", "limitTo" are built-in filter functionalities of AngularJS -->
-        	<li ng-animate="'animate'" 
-            ng-animate="{enter: 'example-repeat-enter',
-                      leave: 'example-repeat-leave',
-                      move: 'example-repeat-move'}" 
-                      class="list-group-item" ng-repeat="value in results | filter: filterText | isGenre:genreFilter | startFrom: currentPage*itemsPerPage | limitTo: itemsPerPage | orderBy:customOrder:orderReverse ">
+        	<li class="list-group-item" ng-repeat="value in results | filter: filterText | isGenre:genreFilter | startFrom: currentPage*itemsPerPage | limitTo: itemsPerPage | orderBy:customOrder:orderReverse ">
         		<div class="row">
 
         			<div class="col-md-2">

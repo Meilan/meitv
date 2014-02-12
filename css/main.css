@@ -178,6 +178,7 @@ div.total span{
 .footer a {
     color: #e6e6e6;
 }
+
 .modal-content {
     text-align: center;
 }
@@ -185,12 +186,39 @@ div.total span{
 .main-frame {
     min-height: 670px;
 }
-.example-repeat-enter-setup,
-.example-repeat-leave-setup,
-.example-repeat-move-setup {
-  -webkit-transition:all linear 0.5s;
-  -moz-transition:all linear 0.5s;
-  -ms-transition:all linear 0.5s;
-  -o-transition:all linear 0.5s;
-  transition:all linear 0.5s;
-}
+
+.animate.ng-enter, .animate.ng-leave { 
+    -webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -moz-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -ms-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -o-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space:nowrap;
+}        /* starting animations for enter */
+.animate.ng-enter-active, .animate.ng-leave { 
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+} /* terminal animations for enter */
+
+.animate.ng-leave-active, .animate.ng-enter { 
+  opacity: 1;
+    width: 150px;
+    height: 30px;
+
+} /* terminal animations for leave */
+
+
+
+
+
+
+
+
+
+
+

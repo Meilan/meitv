@@ -4,6 +4,7 @@
     "dependencies": {
         "angular": "~1.2.11",
         "angular-route": "~1.2.11",
+        "angular-animate": "~1.2.11",
         "angular-ui-bootstrap-bower": "~0.6.0",
         "requirejs": "~2.1.9",
         "requirejs-plugins": "~1.0.2"
