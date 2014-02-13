@@ -23,6 +23,7 @@ define(['app', 'MovieService'], function (app) {
 			$('nav li').removeClass('active');
 			$('li.movies').addClass('active');
 
+			// Interact with Movie service
 			Movies.query().then(function (result) {
                 angular.forEach(result, function(value, index) {
 					// Make a genre array to able to display in the genre dropdown box
