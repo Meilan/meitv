@@ -2,7 +2,7 @@
 // define(['app','angular-resource'], function (app) {
 define(['app'], function (app) {
     // app.register.factory('Pictures', ['$http', '$q', '$log', '$resource', function ($http, $q, $log, $resource) {
-    app.register.service('dvdItems', ['$http', function ($http) {
+    app.register.service('dvdItems', function () {
 
         var dvds = [
             {
@@ -26,6 +26,6 @@ define(['app'], function (app) {
 
         return dvds;
 
-    }]);
+    });
 
 });
